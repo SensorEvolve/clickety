@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { BrandList } from '../../../components/BrandList';
 
 export default function BrandScreen() {
