@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { View } from "@/components/Themed";
-import BrandCard from "@/components/BrandCard";
+import BrandCard from "@/components/brand/BrandCard";
 import { ScrollView } from "react-native";
 
 export default function BrandsScreen() {
