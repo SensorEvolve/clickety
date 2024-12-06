@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { View, ScrollView, StyleSheet } from "react-native";
 import { Text } from "@/components/Themed";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/product/ProductCard";
 import { useState, useEffect } from "react";
 
 type Product = {

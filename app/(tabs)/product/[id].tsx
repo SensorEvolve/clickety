@@ -1,7 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 import { View, ScrollView, StyleSheet, Image } from "react-native";
 import { Text } from "@/components/Themed";
-import AudioPlayer from "@/components/AudioPlayer";
 import { useState, useEffect } from "react";
 
 type Product = {
@@ -9,7 +8,6 @@ type Product = {
   product_name: string;
   description: string;
   image_url: string;
-  sound_url: string;
 };
 
 export default function ProductScreen() {
@@ -23,7 +21,6 @@ export default function ProductScreen() {
       product_name: "Product Name",
       description: "Detailed product description goes here...",
       image_url: "temp/image.jpg",
-      sound_url: "temp/sound.mp3",
     });
   }, [id]);
 
@@ -45,7 +42,6 @@ export default function ProductScreen() {
       <View style={styles.content}>
         <Text style={styles.title}>{product.product_name}</Text>
         <Text style={styles.description}>{product.description}</Text>
-        <AudioPlayer soundUrl={product.sound_url} />
       </View>
     </ScrollView>
   );
