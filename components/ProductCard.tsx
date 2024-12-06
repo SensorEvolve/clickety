@@ -1,19 +1,20 @@
 import { StyleSheet, Pressable, Image } from "react-native";
 import { View, Text } from "@/components/Themed";
-import { router } from "expo-router";
 
-type Props = {
-  brand: string;
+interface ProductCardProps {
+  key: string;
   name: string;
   image: string;
-};
+  onPress: () => void; // Add this prop type
+}
 
-export default function ProductCard({ brand, name, image }: Props) {
+export default function ProductCard({
+  name,
+  image,
+  onPress,
+}: ProductCardProps) {
   return (
-    <Pressable
-      style={styles.card}
-      onPress={() => router.push(`/product/${brand}-${name}`)}
-    >
+    <Pressable style={styles.card} onPress={onPress}>
       <View style={styles.inner}>
         <Image
           source={{ uri: image }}
@@ -28,7 +29,8 @@ export default function ProductCard({ brand, name, image }: Props) {
 
 const styles = StyleSheet.create({
   card: {
-    marginVertical: 8,
+    width: "48%",
+    margin: "1%",
     backgroundColor: "#fff",
     borderRadius: 8,
     elevation: 2,
@@ -42,12 +44,13 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 200,
+    height: 150,
     borderRadius: 8,
   },
   title: {
     fontSize: 16,
     fontWeight: "bold",
     marginTop: 8,
+    textAlign: "center",
   },
 });
